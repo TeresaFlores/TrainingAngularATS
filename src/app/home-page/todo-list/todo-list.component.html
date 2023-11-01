@@ -1,5 +1,6 @@
-<ul>
-  <li>Learn Angular</li>
-  <li>Be good @ Angular</li>
-  <li>profit?</li>
-</ul>
+<section class="container">
+  <h2>TODO list</h2>
+  <ul *ngFor="let todo of todos">
+    <li>{{ todo }}</li>
+  </ul>
+</section>

@@ -1,1 +1,12 @@
-<p>test-thing works!</p>
+<section class="contain">
+  <h2>Testing stuff</h2>
+  <button (click)="changePicture()">Change Picture</button>
+  <img
+    [src]="source"
+    alt="test image"
+    class="image"
+    [style]="{
+      'border-color': redColor ? 'red' : 'green'
+    }"
+  />
+</section>

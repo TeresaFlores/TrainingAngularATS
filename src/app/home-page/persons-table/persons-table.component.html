@@ -1,0 +1,26 @@
+<section class="container">
+  <h2>Tarea 3</h2>
+  <button (click)="hideShowTable()">Hide/Show table</button>
+  <button (click)="changeCurrency()">Change currency</button>
+  <ng-template #other>
+    <h3>can't see me</h3>
+  </ng-template>
+  <table *ngIf="visible; else other">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>email</th>
+        <th>moneys</th>
+        <th>exchange rate ({{ currency }})</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let person of people">
+      <tr>
+        <td>{{ person.name }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.moneys | number : "1.2-2" }}</td>
+        <td>{{ person.moneys | currency : currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

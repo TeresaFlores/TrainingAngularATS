@@ -1,1 +1,52 @@
-<p>nav-bar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CineFregon</a>
+    <button class="navbar-toggler" type="button" (click)="changeClass()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="displayMobile">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            [class.active]="activeLink === '/'"
+            (click)="setActiveLink('/')"
+            aria-current="page"
+            href="#"
+          >
+            <img [src]="homeIcon" alt="Home Icon" width="16px" />Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            href="#"
+            [class.active]="activeLink === '/tickets'"
+            (click)="setActiveLink('/tickets')"
+            ><img [src]="ticketIcon" alt="Home Icon" width="16px" />Tickets</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            href="#"
+            [class.active]="activeLink === '/food'"
+            (click)="setActiveLink('/food')"
+            ><img [src]="foodIcon" alt="Home Icon" width="16px" />Food</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            href="#"
+            [class.active]="activeLink === '/contact'"
+            (click)="setActiveLink('/contact')"
+            ><img [src]="contactIcon" alt="Home Icon" width="16px" />Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

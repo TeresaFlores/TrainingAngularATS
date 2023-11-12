@@ -6,9 +6,9 @@ import { FoodPageComponent } from './food-page/food-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 
 const routes: Routes = [
-  { path: '/tickets', component: TicketsPageComponent },
-  { path: '/food', component: FoodPageComponent },
-  { path: '/contact', component: ContactPageComponent },
+  { path: 'tickets', component: TicketsPageComponent },
+  { path: 'food', component: FoodPageComponent },
+  { path: 'contact', component: ContactPageComponent },
   { path: '', component: HomePageComponent },
 ];
 

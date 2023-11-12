@@ -11,16 +11,11 @@ export class NavBarComponent implements OnInit {
   foodIcon = 'assets/icons/food-icon.svg';
   contactIcon = 'assets/icons/contact-icon.svg';
   displayMobile = false;
-  activeLink = '/';
   constructor() {}
 
   ngOnInit(): void {}
 
   changeClass() {
     this.displayMobile = !this.displayMobile;
-  }
-
-  setActiveLink(link: string) {
-    this.activeLink = link;
   }
 }

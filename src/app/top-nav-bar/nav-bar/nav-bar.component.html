@@ -9,10 +9,10 @@
         <li class="nav-item">
           <a
             class="nav-link d-flex gap-1"
-            [class.active]="activeLink === '/'"
-            (click)="setActiveLink('/')"
             aria-current="page"
-            href="#"
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
           >
             <img [src]="homeIcon" alt="Home Icon" width="16px" />Home</a
           >
@@ -20,18 +20,16 @@
         <li class="nav-item">
           <a
             class="nav-link d-flex gap-1"
-            href="#"
-            [class.active]="activeLink === '/tickets'"
-            (click)="setActiveLink('/tickets')"
+            routerLink="/tickets"
+            routerLinkActive="active"
             ><img [src]="ticketIcon" alt="Home Icon" width="16px" />Tickets</a
           >
         </li>
         <li class="nav-item">
           <a
             class="nav-link d-flex gap-1"
-            href="#"
-            [class.active]="activeLink === '/food'"
-            (click)="setActiveLink('/food')"
+            routerLink="/food"
+            routerLinkActive="active"
             ><img [src]="foodIcon" alt="Home Icon" width="16px" />Food</a
           >
         </li>
@@ -40,9 +38,8 @@
         <li class="nav-item">
           <a
             class="nav-link d-flex gap-1"
-            href="#"
-            [class.active]="activeLink === '/contact'"
-            (click)="setActiveLink('/contact')"
+            routerLink="/contact"
+            routerLinkActive="active"
             ><img [src]="contactIcon" alt="Home Icon" width="16px" />Contact</a
           >
         </li>

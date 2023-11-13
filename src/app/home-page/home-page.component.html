@@ -3,8 +3,8 @@
     <h1>Welcome to CineFregon</h1>
     <p><em> a movie theater "bien chingon" </em></p>
   </section>
-  <section class="d-flex flex-column align-items-center">
-    <h2 class="text-center my-4">New Movies</h2>
+  <section class="d-flex flex-column align-items-center gap-2">
+    <h2 class="text-center mt-4 mb-1">New Movies</h2>
     <div id="moviesCarousel" class="carousel slide images-container">
       <div class="carousel-indicators">
         <ng-container *ngFor="let movie of movies; index as i">
@@ -45,6 +45,16 @@
         ></span>
         <span class="visually-hidden">Next</span>
       </button>
+    </div>
+    <div class="card">
+      <div class="card-body d-flex flex-column gap-3">
+        <h5 class="card-title px-4">Movie display times</h5>
+        <div class="card-text d-flex justify-content-around">
+          <ng-container *ngFor="let time of movies[displayMovie].times">
+            <span>{{ time }}</span>
+          </ng-container>
+        </div>
+      </div>
     </div>
   </section>
 </article>

@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.css";
+
+body {
+  height: 100vh;
+}
+
+main {
+  background: linear-gradient(
+    to right,
+    rgba(52, 21, 52, 1) 0%,
+    rgb(66, 77, 179) 15%,
+    rgb(66, 77, 179) 85%,
+    rgba(52, 21, 52, 1) 100%
+  );
+  height: calc(100% - 56px);
+}
+
+article {
+  height: calc(100vh - 56px);
+  background-color: rgb(66, 77, 179);
+  max-width: 1200px;
+  margin-inline: auto;
+}

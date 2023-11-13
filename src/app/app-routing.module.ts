@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { TicketsPageComponent } from './tickets-page/tickets-page.component';
 import { FoodPageComponent } from './food-page/food-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { ContactPageModule } from './contact-page/contact-page.module';
 
 const routes: Routes = [
   { path: 'tickets', component: TicketsPageComponent },

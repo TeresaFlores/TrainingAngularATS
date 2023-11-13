@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Carousel } from 'bootstrap';
+import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 
 @Component({

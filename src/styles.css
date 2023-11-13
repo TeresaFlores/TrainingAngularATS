@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.css";
+:root {
+  --bg-mycolor: rgb(122, 94, 245);
+}
 
 body {
   height: 100vh;
@@ -9,8 +12,8 @@ main {
   background: linear-gradient(
     to right,
     rgba(52, 21, 52, 1) 0%,
-    rgb(66, 77, 179) 15%,
-    rgb(66, 77, 179) 85%,
+    var(--bg-mycolor) 15%,
+    var(--bg-mycolor) 85%,
     rgba(52, 21, 52, 1) 100%
   );
   min-height: calc(100% - 56px);
@@ -18,7 +21,7 @@ main {
 
 article {
   min-height: calc(100vh - 56px);
-  background-color: rgb(66, 77, 179);
+  background-color: var(--bg-mycolor);
   max-width: 1200px;
   margin-inline: auto;
   padding-bottom: 16px;

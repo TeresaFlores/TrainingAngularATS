@@ -1,1 +1,64 @@
-<p>contact-page works!</p>
+<section class="container-fluid text-center pt-4">
+  <h1>Contact Us</h1>
+  <p>
+    <em
+      >For any issues or suggestions, please fill the form below to contact
+      us</em
+    >
+  </p>
+</section>
+<section class="mt-4 mb-1 container form-container">
+  <form (submit)="onSubmit($event)">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        aria-describedby="name"
+        [(ngModel)]="formData.name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="emailAddress" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="emailAddress"
+        name="emailAddress"
+        aria-describedby="emailHelp"
+        [(ngModel)]="formData.emailAddress"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="messageTitle" class="form-label">Message Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="messageTitle"
+        name="messageTitle"
+        aria-describedby="messageTitle"
+        [(ngModel)]="formData.messageTitle"
+      />
+      <div id="emailHelp" class="form-text">What is your question/issue?</div>
+    </div>
+    <div class="mb-3">
+      <label for="messageBody" class="form-label">Message</label>
+      <input
+        type="text"
+        class="form-control"
+        id="messageBody"
+        name="messageBody"
+        aria-describedby="messageBody"
+        [(ngModel)]="formData.messageBody"
+      />
+      <div id="emailHelp" class="form-text">Please tell us more</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,8 +9,8 @@ import { MoviesService } from '../services/movies.service';
 })
 export class HomePageComponent implements OnInit {
   movies: MoviesService['movies'] = [];
-  constructor(private service: MoviesService) {
-    this.movies = service.getMovies();
+  constructor(private moviesService: MoviesService, private router: Router) {
+    this.movies = moviesService.getMovies();
   }
   displayMovie = 0;
   ngOnInit(): void {}
@@ -24,5 +25,9 @@ export class HomePageComponent implements OnInit {
   }
   selectMovie(movie: number) {
     this.displayMovie = movie;
+  }
+
+  goToMovie(index: number) {
+    this.router.navigateByUrl(`/tickets?movieID=${index}`);
   }
 }

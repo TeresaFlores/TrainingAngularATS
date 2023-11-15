@@ -73,4 +73,12 @@ export class MoviesService {
   getMovies(): typeof this.movies {
     return this.movies;
   }
+
+  getMovie(index: number): (typeof this.movies)[number] {
+    const safeIndex = 0;
+    if (index > this.movies.length - 1 || index < 0) {
+      return this.movies[safeIndex];
+    }
+    return this.movies[index];
+  }
 }

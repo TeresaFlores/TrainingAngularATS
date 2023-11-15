@@ -1,1 +1,20 @@
-<p>tickets-page works!</p>
+<section class="d-flex flex-column align-items-center gap-2 pt-4">
+  <div class="card" style="width: 18rem">
+    <img [src]="movie.pic" class="card-img-top" [alt]="movie.name" />
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.name }}</h5>
+      <p class="card-text">
+        {{ movie.description }}
+      </p>
+      <div class="btn-group" role="group" aria-label="displayHoursSelection">
+        <button
+          type="button"
+          class="btn btn-primary"
+          *ngFor="let hour of movie.times"
+        >
+          {{ hour }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

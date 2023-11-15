@@ -20,7 +20,12 @@
     <div class="carousel-inner">
       <ng-container *ngFor="let movie of movies; index as i">
         <div class="carousel-item" [class.active]="i === displayMovie">
-          <img [src]="movie.pic" class="d-block w-100" [alt]="movie.name" />
+          <img
+            [src]="movie.pic"
+            class="d-block w-100"
+            [alt]="movie.name"
+            (click)="goToMovie(i)"
+          />
           <div class="carousel-caption d-none d-md-block">
             <h5 class="movie-title">{{ movie.name }}</h5>
             <p class="movie-subtitle">

@@ -7,9 +7,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FormsModule } from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
+import { TicketsPageComponent } from './tickets-page/tickets-page.component';
+import { FoodPageComponent } from './food-page/food-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, ToastComponent],
+  declarations: [
+    AppComponent,
+    ToastComponent,
+    HomePageComponent,
+    TicketsPageComponent,
+    FoodPageComponent,
+    ContactPageComponent,
+  ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, TopNavBarModule],
   providers: [],
   bootstrap: [AppComponent],

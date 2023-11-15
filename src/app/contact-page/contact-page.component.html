@@ -8,22 +8,25 @@
   </p>
 </section>
 <section class="mt-4 mb-1 container form-container">
-  <form (submit)="onSubmit($event)">
+  <form #form (submit)="onSubmit(form, $event)" ngNativeValidate>
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
       <input
         type="text"
+        required
         class="form-control"
         id="name"
         name="name"
         aria-describedby="name"
-        [(ngModel)]="formData.name"
+        [ngModel]="formData.name | titlecase"
+        (ngModelChange)="formData.name = $event"
       />
     </div>
     <div class="mb-3">
       <label for="emailAddress" class="form-label">Email address</label>
       <input
         type="email"
+        required
         class="form-control"
         id="emailAddress"
         name="emailAddress"
@@ -38,25 +41,27 @@
       <label for="messageTitle" class="form-label">Message Title</label>
       <input
         type="text"
+        required
         class="form-control"
         id="messageTitle"
         name="messageTitle"
         aria-describedby="messageTitle"
-        [(ngModel)]="formData.messageTitle"
+        [ngModel]="formData.messageTitle | uppercase"
+        (ngModelChange)="formData.messageTitle = $event"
       />
       <div id="emailHelp" class="form-text">What is your question/issue?</div>
     </div>
     <div class="mb-3">
       <label for="messageBody" class="form-label">Message</label>
-      <input
-        type="text"
+      <textarea
+        required
         class="form-control"
         id="messageBody"
         name="messageBody"
         aria-describedby="messageBody"
+        rows="3"
         [(ngModel)]="formData.messageBody"
-      />
-      <div id="emailHelp" class="form-text">Please tell us more</div>
+      ></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

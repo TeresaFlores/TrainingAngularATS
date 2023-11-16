@@ -10,6 +10,7 @@ import { ToastComponent } from './toast/toast.component';
 import { TicketsPageComponent } from './tickets-page/tickets-page.component';
 import { FoodPageComponent } from './food-page/food-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     TicketsPageComponent,
     FoodPageComponent,
     ContactPageComponent,
+    CartComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, TopNavBarModule],
   providers: [],

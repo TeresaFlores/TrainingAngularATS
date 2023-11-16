@@ -1,1 +1,28 @@
-<p>food-page works!</p>
+<section class="d-flex flex-column align-items-start pt-4">
+  <h1 class="mb-4">Add the food you like to your cart and checkout later.</h1>
+  <div class="card mb-3" style="max-width: 540px" *ngFor="let food of foods">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          [src]="food.pic"
+          class="img-fluid rounded-start"
+          [alt]="food.name"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ food.name }}</h5>
+          <p class="card-text">{{ food.description }}</p>
+          <p class="card-text d-flex justify-content-between">
+            <small class="text-body-secondary"
+              >Price: {{ food.price | currency : currency }}</small
+            >
+            <button class="btn btn-warning" (click)="addItemToCart(food)">
+              Add to Cart
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

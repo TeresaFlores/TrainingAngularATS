@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "TrainingAngularATS"
+  "defaultProject": "TrainingAngularATS",
+  "cli": {
+    "analytics": false
+  }
 }

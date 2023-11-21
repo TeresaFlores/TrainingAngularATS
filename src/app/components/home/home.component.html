@@ -1,38 +1,56 @@
-<div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="assets/movies/spiderverse.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="assets/movies/starwars.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="assets/movies/harrypotter.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div id="carouselMoniasMovies" class="carousel bg-dark" >
+  <div class="carousel-indicators">
+    <ng-container *ngFor="let movie of movies; index as index">
+      <button
+        type="button"
+        data-bs-target="#carouselMoniasMovies"
+        [class.active]="index === currentMovieIndex"
+        [ariaCurrent]="index === currentMovieIndex"
+        [ariaLabel]="movie.name"
+        (click)="newIndex(index)"
+      ></button>
+    </ng-container>
   </div>
+  <div class="carousel-inner">
+    <ng-container *ngFor="let movie of movies; index as index">
+      <div
+        class="carousel-item fade-in"
+        [class.active]="index === currentMovieIndex"
+      >
+        <img
+          [src]="movie.image"
+          class="d-block w-100 vh-100"
+          [alt]="movie.name"
+        />
+        <div
+          class="d-md-block bg-black bg-opacity-50 position-absolute vh-100 vw-100 top-0 end-0"
+        >
+          <div class="caption">
+            <h3>{{ movie.name }}</h3>
+            <p>{{ movie.description }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselMoniasMovies"
+    data-bs-slide="prev"
+    (click)="prev()"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselMoniasMovies"
+    data-bs-slide="next"
+    (click)="next()"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

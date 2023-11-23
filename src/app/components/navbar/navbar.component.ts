@@ -7,6 +7,7 @@ import { RoutingModule } from 'src/app/routing/routing.module';
   standalone: true,
   imports: [CommonModule, RoutingModule],
   templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
   displayMobile = false;

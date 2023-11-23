@@ -1,0 +1,13 @@
+.button-time-tickets {
+  border: 1px solid rgb(60, 9, 121);
+  color: rgb(60, 9, 121);
+  cursor: pointer;
+  border-radius: 6px;
+  text-decoration: none;
+  padding: 0.125rem 0.525rem;
+}
+
+.button-time-tickets:hover {
+  background-color: rgb(60, 9, 121);
+  color: white;
+}

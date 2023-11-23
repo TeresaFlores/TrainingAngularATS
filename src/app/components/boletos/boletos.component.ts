@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PeliculasService } from 'src/app/services/peliculas.service';
 
 @Component({
   selector: 'app-boletos',
@@ -10,7 +11,10 @@ import { CommonModule } from '@angular/common';
 })
 export class BoletosComponent implements OnInit {
 
-  constructor() { }
+  peliculas: PeliculasService['peliculas'] = [];
+  constructor(private service: PeliculasService) {
+    this.peliculas = service.getPeliculas();
+  }
 
   ngOnInit(): void {
   }

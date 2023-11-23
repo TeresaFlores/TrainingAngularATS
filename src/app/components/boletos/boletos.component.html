@@ -1,1 +1,37 @@
-<p>boletos works!</p>
+<div class="container-xxl bd-gutter bd-layout  py-5">
+  <div
+    class="bg-white rounded d-flex flex-column justify-content-center align-items-center align-self-center mt-5 overflow-auto shadow"
+  >
+    <div class="mx-auto p-4">
+      <h1 class="text-center fw-bolder">Monia's Movies</h1>
+    </div>
+    <div class="d-flex flex-column gap-2 w-100 px-4">
+      <ng-container *ngFor="let peli of peliculas; index: of; index">
+        <div class="container d-flex mx-auto w-100 p-2">
+          <div class="movie mx-2">
+            <img
+              [src]="peli.imagen"
+              class="border rounded shadow-sm"
+              [alt]="peli.nombre"
+              width="80"
+              height="120"
+            />
+          </div>
+          <div class="title and times mx-2">
+            <div class="title">
+              <h4 class="fw-bold">{{ peli.nombre }}</h4>
+            </div>
+            <div class="d-flex justify-content-start gap-2 my-3">
+              <ng-container
+                *ngFor="let horario of peli.horarios; index as index"
+              >
+                <span class="button-time-tickets shadow-sm">{{ horario }}</span>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,39 +1,87 @@
 .caption {
-    position: relative;
-    top: 35vh;
-    left: 65%;
-    color: #fff;
+  position: relative;
+  top: 30vh;
+  left: 62%;
+  color: #fff;
+  width: 30%;
 }
 
 .fade-in {
-    animation: fadeIn 2.5s;
-    -webkit-animation: fadeIn 2.5s;
-    -moz-animation: fadeIn 2.5s;
-    -o-animation: fadeIn 2.5s;
-    -ms-animation: fadeIn 2.5s;
+  animation: fadeIn 2.5s;
+  -webkit-animation: fadeIn 2.5s;
+  -moz-animation: fadeIn 2.5s;
+  -o-animation: fadeIn 2.5s;
+  -ms-animation: fadeIn 2.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
-  
-  @-moz-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  @-webkit-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
-  
-  @-o-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  @-ms-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.button-movies {
+  background-color: rgb(21, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(60, 9, 121, 1) 0%,
+    rgba(132, 0, 255, 0.8743872549019608) 100%
+  );
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.425rem 1rem;
+}
+
+.button-time {
+  border: 1px solid white;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.125rem 0.425rem;
+}
+
+.button-movies:hover {
+  background-color: rgba(143, 143, 143, 0.767);
+  border-color: rgba(143, 143, 143, 0.767);
+}
+
+

@@ -15,7 +15,7 @@ const routes: Routes = [
     component: BoletosComponent,
   },
   {
-    path: 'alimentos',
+    path: 'dulceria',
     component: AlimentosComponent,
   },
   {

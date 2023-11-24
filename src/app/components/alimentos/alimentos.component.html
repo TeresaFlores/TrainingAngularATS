@@ -1,1 +1,118 @@
-<p>alimentos works!</p>
+<div class="container-xxl bd-gutter bd-layout py-5">
+  <div
+    class="bg-white rounded d-flex flex-column justify-content-center align-items-center align-self-center mt-5 overflow-auto shadow"
+  >
+    <div class="w-100 px-5 pt-4">
+      <h3 class="text-left">Dulceria</h3>
+    </div>
+    <div class="d-flex flex-column gap-4 my-2 mb-4">
+      <div class="w-100 px-2 pt-4">
+        <h4 class="text-left">Combos</h4>
+      </div>
+
+      <div class="d-flex gap-3 justify-content-around">
+        <ng-container *ngFor="let combo of combos">
+          <div class="card" style="width: 18rem">
+            <img
+              [src]="combo.imagen"
+              class="card-img-top"
+              [alt]="combo.nombre"
+              width="150"
+              height="200"
+            />
+            <div class="card-body">
+              <h4 class="card-text">
+                {{ combo.nombre }}
+              </h4>
+              <p class="card-text">
+                {{ combo.descripcion }}
+              </p>
+              <p class="card-text">
+                {{ combo.precio  | currency }}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <hr />
+      <div class="w-100 px-2">
+        <h4 class="text-left">Palomitas</h4>
+      </div>
+      <div class="d-flex gap-3 justify-content-around">
+        <div class="d-flex gap-3 justify-content-around">
+          <ng-container *ngFor="let palomita of palomitas">
+            <div class="card" style="width: 18rem">
+              <img
+                [src]="palomita.imagen"
+                class="card-img-top"
+                [alt]="palomita.nombre"
+                width="150"
+                height="200"
+              />
+              <div class="card-body">
+                <h4 class="card-text">
+                  {{ palomita.nombre }}
+                </h4>
+                <p class="card-text">
+                  {{ palomita.precio  | currency }}
+                </p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <hr />
+      <div class="w-100 px-2">
+        <h4 class="text-left">Refrescos</h4>
+      </div>
+      <div class="d-flex gap-3 justify-content-around">
+        <ng-container *ngFor="let refresco of refrescos">
+          <div class="card" style="width: 18rem">
+            <img
+              [src]="refresco.imagen"
+              class="card-img-top"
+              [alt]="refresco.nombre"
+              width="150"
+              height="220"
+            />
+            <div class="card-body">
+              <h4 class="card-text">
+                {{ refresco.nombre }}
+              </h4>
+              <p class="card-text">
+                {{ refresco.precio  | currency }}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <hr />
+      <div class="w-100 px-2">
+        <h4 class="text-left">Alimentos</h4>
+      </div>
+      <div class="d-flex gap-3 justify-content-between">
+        <ng-container *ngFor="let comida of comida">
+          <div class="card" style="width: 18rem">
+            <img
+              [src]="comida.imagen"
+              class="card-img-top"
+              [alt]="comida.nombre"
+              width="150"
+              height="200"
+            />
+            <div class="card-body">
+              <h4 class="card-text">
+                {{ comida.nombre }}
+              </h4>
+              <p class="card-text">
+                {{ comida.precio | currency }}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>

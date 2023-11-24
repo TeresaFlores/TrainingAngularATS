@@ -1,13 +1,29 @@
+.badge {
+ background-color: #444040;
+}
+
 .button-time-tickets {
-  border: 1px solid rgb(60, 9, 121);
-  color: rgb(60, 9, 121);
+  background-color: #943BDB1A;
   cursor: pointer;
   border-radius: 6px;
   text-decoration: none;
-  padding: 0.125rem 0.525rem;
+  color: black;
+  padding: 0.125rem 0.825rem;
 }
 
 .button-time-tickets:hover {
   background-color: rgb(60, 9, 121);
   color: white;
 }
+
+.boletos-content{
+    flex-direction: column;
+}
+
+@media (min-width: 768px) { 
+    .boletos-content{
+        flex-direction: row;
+    }
+}
+
+

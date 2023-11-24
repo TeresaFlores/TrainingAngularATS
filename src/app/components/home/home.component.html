@@ -37,7 +37,7 @@
                 <span class="button-time">{{ horario }}</span>
               </ng-container>
             </div>
-            <button type="button" class="btn button-movies fw-lighter">
+            <button type="button" class="btn button-movies fw-lighter" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  (click)="selectMovie(index)">
               Comprar Boleto
             </button>
           </div>

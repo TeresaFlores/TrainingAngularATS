@@ -1,0 +1,12 @@
+.modal-header, .modal-footer {
+    border: none !important;
+}
+
+.modal-select {
+    width: 15%;
+}
+
+.button-modal {
+    background-color: #B01DF5;
+    color: white;
+}

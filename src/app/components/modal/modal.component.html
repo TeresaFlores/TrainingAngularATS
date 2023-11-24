@@ -1,0 +1,54 @@
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Selecciona tus boletos
+        </h1>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-column">
+          <p class="fw-medium">
+            Pelicula: <span class="fw-light">{{ pelicula }}</span>
+          </p>
+          <p class="fw-medium">
+            Sala: <span class="fw-light">Tradicional</span>
+          </p>
+          <p class="fw-medium">
+            Horario: <span class="fw-light">{{ horario }}</span>
+          </p>
+          <div class="d-flex gap-3 align-items-center">
+            <label class="form-label fw-medium" for="boletos"
+              >Seleccione sus Boletos: </label
+            >
+            <select
+              id="boletos"
+              #boletos
+              class="form-select modal-select"
+              (change)="selectBoletos(boletos.value)"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn button-modal" data-bs-dismiss="modal">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>

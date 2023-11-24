@@ -1,0 +1,9 @@
+.button-alimentos {
+    border-color: #B01DF5;
+    color: #B01DF5;
+}
+
+.button-alimentos:hover {
+    background-color: #B01DF5;
+    color: white;
+}

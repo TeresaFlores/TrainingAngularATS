@@ -14,6 +14,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 export class ModalComponent implements OnDestroy{
   pelicula: string = '';
   horario: string = '';
+  cantidadBoletos: number = 0;
 
   private subscription: Subscription;
 
@@ -27,7 +28,7 @@ export class ModalComponent implements OnDestroy{
   }
 
   selectBoletos(boleto: string) {
-    console.log(boleto)
+    this.cantidadBoletos = +boleto;
   }
 
   clearMessage() {
@@ -36,6 +37,11 @@ export class ModalComponent implements OnDestroy{
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  addBoletoCarro(pelicula: string, cantidad: number, horario: string) {
+    console.log('boleto - ', {pelicula, cantidad, horario})
+    this.clearMessage();
   }
 
 }

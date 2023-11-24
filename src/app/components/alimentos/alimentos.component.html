@@ -11,7 +11,7 @@
       </div>
 
       <div class="d-flex gap-3 justify-content-around">
-        <ng-container *ngFor="let combo of combos">
+        <ng-container *ngFor="let combo of combos; index as index">
           <div class="card" style="width: 18rem">
             <img
               [src]="combo.imagen"
@@ -28,8 +28,25 @@
                 {{ combo.descripcion }}
               </p>
               <p class="card-text">
-                {{ combo.precio  | currency }}
+                {{ combo.precio | currency }}
               </p>
+              <div class="mb-2">
+                <label class="form-label fw-bold">Cantidad:</label>
+                <input
+                  class="form-control form-control-sm"
+                  [(ngModel)]="cantidadCombo[index]"
+                  min="1"
+                  max="5"
+                  type="number"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn button-alimentos"
+                (click)="addComboCarro(index)"
+              >
+                Agregar a Carrito
+              </button>
             </div>
           </div>
         </ng-container>
@@ -41,7 +58,7 @@
       </div>
       <div class="d-flex gap-3 justify-content-around">
         <div class="d-flex gap-3 justify-content-around">
-          <ng-container *ngFor="let palomita of palomitas">
+          <ng-container *ngFor="let palomita of palomitas; index as index">
             <div class="card" style="width: 18rem">
               <img
                 [src]="palomita.imagen"
@@ -55,8 +72,25 @@
                   {{ palomita.nombre }}
                 </h4>
                 <p class="card-text">
-                  {{ palomita.precio  | currency }}
+                  {{ palomita.precio | currency }}
                 </p>
+                <div class="mb-2">
+                  <label class="form-label fw-bold">Cantidad:</label>
+                  <input
+                    class="form-control form-control-sm"
+                    [(ngModel)]="cantidadPalomita[index]"
+                    min="1"
+                    max="5"
+                    type="number"
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="btn button-alimentos"
+                  (click)="addPalomitaCarro(index)"
+                >
+                  Agregar a Carrito
+                </button>
               </div>
             </div>
           </ng-container>
@@ -67,7 +101,7 @@
         <h4 class="text-left">Refrescos</h4>
       </div>
       <div class="d-flex gap-3 justify-content-around">
-        <ng-container *ngFor="let refresco of refrescos">
+        <ng-container *ngFor="let refresco of refrescos; index as index">
           <div class="card" style="width: 18rem">
             <img
               [src]="refresco.imagen"
@@ -81,8 +115,25 @@
                 {{ refresco.nombre }}
               </h4>
               <p class="card-text">
-                {{ refresco.precio  | currency }}
+                {{ refresco.precio | currency }}
               </p>
+              <div class="mb-2">
+                <label class="form-label fw-bold">Cantidad:</label>
+                <input
+                  class="form-control form-control-sm"
+                  [(ngModel)]="cantidadRefresco[index]"
+                  min="1"
+                  max="5"
+                  type="number"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn button-alimentos"
+                (click)="addRefrescoCarro(index)"
+              >
+                Agregar a Carrito
+              </button>
             </div>
           </div>
         </ng-container>
@@ -92,7 +143,7 @@
         <h4 class="text-left">Alimentos</h4>
       </div>
       <div class="d-flex gap-3 justify-content-between">
-        <ng-container *ngFor="let comida of comida">
+        <ng-container *ngFor="let comida of comida; index as index">
           <div class="card" style="width: 18rem">
             <img
               [src]="comida.imagen"
@@ -108,6 +159,23 @@
               <p class="card-text">
                 {{ comida.precio | currency }}
               </p>
+              <div class="mb-2">
+                <label class="form-label fw-bold">Cantidad:</label>
+                <input
+                  class="form-control form-control-sm"
+                  [(ngModel)]="cantidadComida[index]"
+                  min="1"
+                  max="5"
+                  type="number"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn button-alimentos"
+                (click)="addComidaCarro(index)"
+              >
+                Agregar a Carrito
+              </button>
             </div>
           </div>
         </ng-container>

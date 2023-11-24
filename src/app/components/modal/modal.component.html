@@ -44,10 +44,10 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearMessage()">
           Cancelar
         </button>
-        <button type="button" class="btn button-modal" data-bs-dismiss="modal">Agregar</button>
+        <button type="button" class="btn button-modal" data-bs-dismiss="modal" (click)="addBoletoCarro(pelicula,cantidadBoletos,horario)">Agregar</button>
       </div>
     </div>
   </div>

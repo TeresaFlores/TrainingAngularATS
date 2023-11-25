@@ -1,0 +1,8 @@
+.button-contacto {
+    background-color: #B01DF5;
+    color: white;
+}
+
+.button-contacto:hover {
+    background-color: #8515b9;
+}

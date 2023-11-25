@@ -1,1 +1,68 @@
-<p>contacto works!</p>
+<div class="container-xxl bd-gutter bd-layout pt-5 vh-100">
+  <div
+    class="bg-white rounded d-flex flex-column justify-content-center align-items-center align-self-center mt-5 overflow-auto shadow"
+  >
+    <div class="w-100 px-5 pt-4">
+      <h3 class="text-center fw-bold">Contactanos</h3>
+    </div>
+
+    <section class="d-flex flex-column p-3 mb-2">
+      <p class="fst-italic fw-lighter">
+        Si tienes algun comentario, duda o sugerencia, por favor compartelo,
+        para poder brindarte el mejor ¡servicio!
+      </p>
+      <div>
+        <form #contactanos ngNativeValidate>
+          <div class="mb-3">
+            <label for="nombre" class="form-label fw-semibold">Nombre</label>
+            <input
+              id="nombre"
+              type="text"
+              name="nombre"
+              class="form-control"
+              aria-describedby="nombre"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label fw-semibold">Correo</label>
+            <input
+              id="correo"
+              type="email"
+              name="correo"
+              class="form-control"
+              aria-describedby="correo"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="asunto" class="form-label fw-semibold"
+              >Titulo del Mensaje</label
+            >
+            <input
+              id="asunto"
+              type="text"
+              name="asunto"
+              class="form-control"
+              aria-describedby="asunto"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea
+              id="mensaje"
+              rows="4"
+              name="mensaje"
+              class="form-control"
+              aria-describedby="mensaje"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn button-contacto">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>

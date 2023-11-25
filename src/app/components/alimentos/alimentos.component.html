@@ -28,9 +28,9 @@
                 {{ combo.descripcion }}
               </p>
               <p class="card-text">
-                {{ combo.precio | currency }}
+                {{ combo.precio | currency : moneda }}
               </p>
-              <div class="mb-2">
+              <div class="d-inline-block mb-2">
                 <label class="form-label fw-bold">Cantidad:</label>
                 <input
                   class="form-control form-control-sm"
@@ -40,6 +40,7 @@
                   type="number"
                 />
               </div>
+              <br />
               <button
                 type="button"
                 class="btn button-alimentos"
@@ -72,9 +73,9 @@
                   {{ palomita.nombre }}
                 </h4>
                 <p class="card-text">
-                  {{ palomita.precio | currency }}
+                  {{ palomita.precio | currency : moneda }}
                 </p>
-                <div class="mb-2">
+                <div class="d-inline-block mb-2">
                   <label class="form-label fw-bold">Cantidad:</label>
                   <input
                     class="form-control form-control-sm"
@@ -84,6 +85,7 @@
                     type="number"
                   />
                 </div>
+                <br />
                 <button
                   type="button"
                   class="btn button-alimentos"
@@ -115,9 +117,9 @@
                 {{ refresco.nombre }}
               </h4>
               <p class="card-text">
-                {{ refresco.precio | currency }}
+                {{ refresco.precio | currency : moneda }}
               </p>
-              <div class="mb-2">
+              <div class="d-inline-block mb-2">
                 <label class="form-label fw-bold">Cantidad:</label>
                 <input
                   class="form-control form-control-sm"
@@ -127,6 +129,7 @@
                   type="number"
                 />
               </div>
+              <br />
               <button
                 type="button"
                 class="btn button-alimentos"
@@ -157,9 +160,9 @@
                 {{ comida.nombre }}
               </h4>
               <p class="card-text">
-                {{ comida.precio | currency }}
+                {{ comida.precio | currency : moneda }}
               </p>
-              <div class="mb-2">
+              <div class="d-inline-block mb-2">
                 <label class="form-label fw-bold">Cantidad:</label>
                 <input
                   class="form-control form-control-sm"
@@ -169,6 +172,7 @@
                   type="number"
                 />
               </div>
+              <br />
               <button
                 type="button"
                 class="btn button-alimentos"

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { Subscription } from 'rxjs';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-carrito',
@@ -18,7 +19,7 @@ export class CarritoComponent implements OnInit {
     precio: 0 
   }];
 
-  constructor(private carritoService: CarritoService) {
+  constructor(private carritoService: CarritoService, private toastService: ToastService) {
     this.subscription = this.carritoService.open$.subscribe((open) => {
       this.open = open;
     });
@@ -58,7 +59,8 @@ export class CarritoComponent implements OnInit {
   }
 
   pagarTotal(){
-    console.log("Su pago ha sido exitoso")
+    this.toastService.setMensaje(`Su pago por la cantidad de ${this.moneda} ${this.getPrecioTotal()} ha sido exitoso!`);
+    this.toastService.abrirToast();
     this.carritoService.cerrarCarro();
     this.carritoService.clearCarro();
   }

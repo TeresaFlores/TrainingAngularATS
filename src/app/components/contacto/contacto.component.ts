@@ -7,6 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-contacto',
@@ -22,7 +23,7 @@ export class ContactoComponent implements OnInit {
     asunto: new FormControl(''),
     mensaje: new FormControl('')
   });
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private toastService: ToastService) {}
 
   ngOnInit(): void {
     this.contactoForm = this.formBuilder.group({
@@ -33,12 +34,10 @@ export class ContactoComponent implements OnInit {
     });
   }
 
-  onSubmit(form: FormGroup) {
-    console.log('Form', {
-      nombre: form.value?.nombre,
-      correo: form.value?.correo,
-      asunto: form.value?.asunto,
-      mensaje: form.value?.mensaje,
-    });
+  onSubmit() {
+    console.log(this.contactoForm.value)
+
+    this.toastService.setMensaje("Mensaje Enviado");
+    this.toastService.abrirToast();
   }
 }

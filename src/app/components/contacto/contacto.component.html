@@ -12,55 +12,97 @@
         para poder brindarte el mejor ¡servicio!
       </p>
       <div>
-        <form #contactanos ngNativeValidate>
+        <form [formGroup]="contactoForm" (ngSubmit)="onSubmit(contactoForm)">
           <div class="mb-3">
             <label for="nombre" class="form-label fw-semibold">Nombre</label>
             <input
               id="nombre"
               type="text"
-              name="nombre"
+              formControlName="nombre"
               class="form-control"
               aria-describedby="nombre"
+              [value]="contactoForm.get('nombre')?.value | titlecase"
               required
             />
+            <p
+            class="fst-italic fw-lighter"
+              *ngIf="
+                contactoForm.get('nombre')?.invalid &&
+                (contactoForm.get('nombre')?.dirty ||
+                  contactoForm.get('nombre')?.touched)
+              "
+            >
+              Por favor indique su nombre.
+            </p>
           </div>
           <div class="mb-3">
             <label for="correo" class="form-label fw-semibold">Correo</label>
             <input
               id="correo"
               type="email"
-              name="correo"
+              formControlName="correo"
               class="form-control"
               aria-describedby="correo"
               required
             />
+            <p
+            class="fst-italic fw-lighter"
+              *ngIf="
+                contactoForm.get('correo')?.invalid &&
+                (contactoForm.get('correo')?.dirty ||
+                  contactoForm.get('correo')?.touched)
+              "
+            >
+              Por favor indique una direccion de correo valida.
+            </p>
           </div>
           <div class="mb-3">
             <label for="asunto" class="form-label fw-semibold"
-              >Titulo del Mensaje</label
+              >Asunto</label
             >
             <input
               id="asunto"
               type="text"
-              name="asunto"
+              formControlName="asunto"
               class="form-control"
               aria-describedby="asunto"
+              [value]="contactoForm.get('asunto')?.value | uppercase"
               required
             />
+            <p
+            class="fst-italic fw-lighter"
+              *ngIf="
+                contactoForm.get('asunto')?.invalid &&
+                (contactoForm.get('asunto')?.dirty ||
+                  contactoForm.get('asunto')?.touched)
+              "
+            >
+              Por favor indique el asunto de su mensaje.
+            </p>
           </div>
           <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
             <textarea
               id="mensaje"
               rows="4"
-              name="mensaje"
+              formControlName="mensaje"
               class="form-control"
               aria-describedby="mensaje"
               required
             ></textarea>
+            <p
+            class="fst-italic fw-lighter"
+              *ngIf="
+                contactoForm.get('mensaje')?.invalid &&
+                (contactoForm.get('mensaje')?.dirty ||
+                  contactoForm.get('mensaje')?.touched)
+              "
+            >
+              El mensaje debe tener por lo menos 15 caracteres de largo.
+            </p>
           </div>
 
-          <button type="submit" class="btn button-contacto">Enviar</button>
+          <button type="submit" class="btn button-contacto" >Enviar</button>
         </form>
       </div>
     </section>
